@@ -278,12 +278,11 @@ const Market = superclass => class extends superclass {
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
   */
-  bookTicker (symbol = '', symbols = []) {
-    symbols = symbols.map(symbol => symbol.toUpperCase())
+  bookTicker (symbol = '') {
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase(), symbols }
+      '/fapi/v1/ticker/bookTicker', { symbol: symbol.toUpperCase() }
     )
   }
 
