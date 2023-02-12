@@ -264,6 +264,7 @@ const Market = superclass => class extends superclass {
     return this.publicRequest(
       'GET',
       '/fapi/v1/ticker/price', { symbol: symbol.toUpperCase() }
+    )
   }
 
   /**
