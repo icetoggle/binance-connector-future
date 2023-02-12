@@ -36,7 +36,7 @@ const Market = superclass => class extends superclass {
   /**
    * Exchange Information<br>
    *
-   * GET /api/v3/exchangeInfo<br>
+   * GET /fapi/v1/exchangeInfo<br>
    *
    * Current exchange trading rules and symbol information<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#exchange-information}
@@ -55,7 +55,7 @@ const Market = superclass => class extends superclass {
     }
     return this.publicRequest(
       'GET',
-      '/api/v3/exchangeInfo',
+      '/fapi/v1/exchangeInfo',
       options
     )
   }
