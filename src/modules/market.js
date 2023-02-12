@@ -253,20 +253,19 @@ const Market = superclass => class extends superclass {
   /**
    * Symbol Price Ticker<br>
    *
-   * GET /api/v3/ticker/price<br>
+   * GET /fapi/v1/ticker/price<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
   */
-  tickerPrice (symbol = '', symbols = []) {
+  tickerPrice (symbol = '') {
     symbols = symbols.map(symbol => symbol.toUpperCase())
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/price', { symbol: symbol.toUpperCase(), symbols }
-    )
+      '/fapi/v1/ticker/price', { symbol: symbol.toUpperCase() }
   }
 
   /**
