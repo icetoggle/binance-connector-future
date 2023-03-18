@@ -77,7 +77,7 @@ const Market = superclass => class extends superclass {
 
     return this.publicRequest(
       'GET',
-      '/api/v3/depth',
+      '/fapi/v1/depth',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
       })
