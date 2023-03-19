@@ -38,7 +38,7 @@ const Trade = superclass => class extends superclass {
 
     return this.signRequest(
       'POST',
-      '/api/v3/order/test',
+      '/fapi/v1/order/test',
       Object.assign(options, {
         symbol: symbol.toUpperCase(),
         side: side.toUpperCase(),
@@ -76,7 +76,7 @@ const Trade = superclass => class extends superclass {
 
     return this.signRequest(
       'POST',
-      '/api/v3/order',
+      '/fapi/v1/order',
       Object.assign(options, {
         symbol: symbol.toUpperCase(),
         side: side.toUpperCase(),
@@ -104,7 +104,7 @@ const Trade = superclass => class extends superclass {
 
     return this.signRequest(
       'DELETE',
-      '/api/v3/order',
+      '/fapi/v1/order',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
       })
@@ -126,7 +126,7 @@ const Trade = superclass => class extends superclass {
 
     return this.signRequest(
       'DELETE',
-      '/api/v3/openOrders',
+      '/fapi/v1/allOpenOrders',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
       })
@@ -150,7 +150,7 @@ const Trade = superclass => class extends superclass {
     validateRequiredParameters({ symbol })
     return this.signRequest(
       'GET',
-      '/api/v3/order',
+      '/fapi/v1/order',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
       })
@@ -244,7 +244,7 @@ const Trade = superclass => class extends superclass {
     validateRequiredParameters({ symbol })
     return this.signRequest(
       'GET',
-      '/api/v3/allOrders',
+      '/fapi/v1/openOrders',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
       })
