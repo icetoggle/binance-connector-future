@@ -70,6 +70,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.icebergQty]
    * @param {string} [options.newOrderRespType]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.positionSide]
    */
   newOrder (symbol, side, type, options = {}) {
     validateRequiredParameters({ symbol, side, type })
@@ -441,6 +442,19 @@ const Trade = superclass => class extends superclass {
     return this.signRequest(
       'GET',
       '/api/v3/rateLimit/order',
+      options
+    )
+  }
+
+  /**
+   * Query positionRisk
+   * /fapi/v2/positionRisk
+   * @param {object} [options]
+   */
+  positionRisk (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/fapi/v2/positionRisk',
       options
     )
   }
